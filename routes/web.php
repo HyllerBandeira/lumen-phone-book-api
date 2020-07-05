@@ -14,3 +14,13 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+// List contact from resource
+$router->get('/contacts', 'ContactController@index');
+// Store a new contact on resource
+$router->post('/contacts', 'ContactController@store');
+// Show an existing contact from resource
+$router->get('/contacts/{contact_id}', 'ContactController@show');
+// Update an existing contact from resource
+$router->put('/contacts/{contact_id}', 'ContactController@update');
+// Delete an existing contact from resource
+$router->delete('/contacts/{contact_id}', 'ContactController@delete');
