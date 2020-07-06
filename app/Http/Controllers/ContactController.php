@@ -20,7 +20,7 @@ class ContactController extends Controller
         $contacts = Contact::where(function($query) use ($request) {
             // Filter contact by name if data is given
             if ($request->name) {
-                $query->where('nome', 'like', "%{$request->name}%");
+                $query->where('name', 'like', "%{$request->name}%");
             }
         })->get();
 
